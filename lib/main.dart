@@ -599,24 +599,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// children: [
-//                           Text(
-//                             'Tocando',
-//                             style: TextStyle(
-//                                 color: Colors.black,
-//                                 fontWeight: FontWeight.bold,
-//                                 fontSize: 20,
-//                                 ),
-//                           ),
-//                         ],
-//                       ),
-//                       Row(
-//                         children: [Text('Coldplay',
-//                         style: TextStyle(
-//                         color: Colors.black,
-//                         fontWeight: FontWeight.bold,
-//                         fontSize: 15
-
-//                         ),
-//                         ), 
-                        // ],

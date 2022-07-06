@@ -7,26 +7,14 @@ class NextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.home,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        backgroundColor: Colors.black,
+        elevation: 0,
       ),
-      body: const Center(
-        child: Text(
-          'Sou a outra tela. ',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            decoration: TextDecoration.lineThrough,
-          ),
-        ),
+      body: Column(
+        children: [
+          Image.asset('assets/images/casal.png' ),
+          Image.asset('assets/images/dog.png' ),
+        ],
       ),
     );
   }
