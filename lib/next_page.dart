@@ -1,3 +1,4 @@
+import 'package:exercicio_1/core/app_assets.dart';
 import 'package:flutter/material.dart';
 
 class NextPage extends StatelessWidget {
@@ -12,8 +13,9 @@ class NextPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset('assets/images/casal.png' ),
-          Image.asset('assets/images/dog.png' ),
+          Image.asset(imgCasal),
+          Image.asset(imgDog),
+          Image.asset(imgHeart),
         ],
       ),
     );
