@@ -1,0 +1,64 @@
+  Container(
+                width: 175,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 30,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(32),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueGrey.shade50,
+                      blurRadius: 5,
+                      spreadRadius: 10,
+                      offset: const Offset(10, 3), //sombra
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        Icon(
+                          Icons.router,
+                          color: Colors.blue,
+                          size: 40,
+                        ),
+                        Icon(
+                          Icons.circle,
+                          color: Colors.red,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 25,
+                      ),
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Router',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'CLOSED',
+                            style:
+                                TextStyle(fontSize: 14, color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            
