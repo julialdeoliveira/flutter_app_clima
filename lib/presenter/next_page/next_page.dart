@@ -1,5 +1,7 @@
-import 'package:exercicio_1/core/app_assets.dart';
-import 'package:exercicio_1/presenter/home/home_page.dart';
+// ignore_for_file: unnecessary_const
+
+import '../../core/app_assets.dart';
+import '../home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,69 +33,76 @@ class NextPage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 200,
-                  height: 200,
-                  margin: const EdgeInsets.all(25),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    image: const DecorationImage(
-                        // image: Image.asset(imgCasal),
-                        image: NetworkImage(
-                            'https://cdn.pixabay.com/photo/2018/10/28/16/11/volcano-3779159_960_720.jpg'),
-                        fit: BoxFit.cover),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: const [
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 200, vertical: 15),
-                    child: Text(
-                      'Olá usuário!',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Italian'),
-                    ),
-                  ),
-                  Text(
-                    'Você está na segunda tela do nosso app, voltar aperte o arrow left na appBar',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'Italian',
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.grey.shade100,
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 200,
+                    height: 200,
+                    margin: const EdgeInsets.all(25),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      image:  DecorationImage(
+                          // image: Image.asset(imgCasal),
+                          image: Image.asset(imgCasal).image,
+                          fit: BoxFit.cover),
                     ),
                   ),
                 ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 350),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                 color: Colors.black, 
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon(CupertinoIcons.back, color: Colors.white),
-                    Icon(CupertinoIcons.circle_filled, color: Colors.white), 
-                    Icon(CupertinoIcons.forward, color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+                      child: Text(
+                        'Olá usuário!',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Italian'),
+                      ),
+                    ),
+                    Text(
+                      'Você está na segunda tela do nosso app, para voltar aperte o arrow left na appBar',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: 'Italian',
+                        
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ],
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 315),
+                child: Container(
+                  height: 50,
+                  decoration: const BoxDecoration(
+                   color: Colors.black, 
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      const Icon(CupertinoIcons.back, color: Colors.white),
+                      const Icon(CupertinoIcons.circle_filled, color: Colors.white), 
+                      const Icon(CupertinoIcons.forward, color: Colors.white),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ContainerLampHome extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final bool isOpened;
+  final Color colorBackground;
+
   const ContainerLampHome({
     Key? key,
+    required this.icon,
+    required this.title,
+    required this.isOpened,
+    required this.colorBackground,
   }) : super(key: key);
 
   @override
@@ -15,7 +24,7 @@ class ContainerLampHome extends StatelessWidget {
       ),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.blue.shade600,
+        color: isOpened ? Colors.red : Colors.amber,
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
@@ -32,9 +41,9 @@ class ContainerLampHome extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               Icon(
-                Icons.light,
+               icon,
                 color: Colors.white,
                 size: 40,
               ),
@@ -51,9 +60,9 @@ class ContainerLampHome extends StatelessWidget {
               vertical: 25,
             ),
             child: Column(
-              children: const [
+              children:  [
                 Text(
-                  'Lamp',
+                  title,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -62,7 +71,7 @@ class ContainerLampHome extends StatelessWidget {
                 ),
                 SizedBox(height: 12),
                 Text(
-                  'OPENED',
+                  isOpened? 'OPENED' : 'CLOSED',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.white,
@@ -75,4 +84,11 @@ class ContainerLampHome extends StatelessWidget {
       ),
     );
   }
+  // String getTextOpened(bool isOpened){
+  //   if (isOpened){
+  //     return 'Aberto';
+  //   }else{
+  //     return 'Fechado';
+  //   }
+  // }
 }
