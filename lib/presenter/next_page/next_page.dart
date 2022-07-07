@@ -1,5 +1,6 @@
 import 'package:exercicio_1/core/app_assets.dart';
 import 'package:exercicio_1/presenter/home/home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NextPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class NextPage extends StatelessWidget {
             },
             icon: const Icon(
               Icons.heart_broken,
-              size: 40,
+              size: 20,
             ),
           ),
         ],
@@ -32,76 +33,64 @@ class NextPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(imgCasal),
-            const Padding(
-              padding: EdgeInsets.all(60),
-              child: Text(
-                'Aqui temos um casal',
-                style: TextStyle(
-                  fontFamily: 'Italian',
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Image.asset(imgDog),
-            const Padding(
-              padding: EdgeInsets.all(60),
-              child: Text(
-                'Um cachorro',
-                style: TextStyle(
-                  fontFamily: 'Italian',
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Image.asset(imgHeart),
-            const Padding(
-              padding: EdgeInsets.all(60),
-              child: Text(
-                'E uma mulher aleatória',
-                style: TextStyle(
-                  fontFamily: 'Italian',
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.left,
-                textWidthBasis: TextWidthBasis.longestLine,
-              ),
-            ),
-            Container(
-              height: 50,
-              decoration: BoxDecoration(color: Colors.pink.shade100),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Icon(
-                        Icons.heart_broken,
-                        size: 35,
-                      ),
-                    ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  margin: const EdgeInsets.all(25),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    image: const DecorationImage(
+                        // image: Image.asset(imgCasal),
+                        image: NetworkImage(
+                            'https://cdn.pixabay.com/photo/2018/10/28/16/11/volcano-3779159_960_720.jpg'),
+                        fit: BoxFit.cover),
                   ),
-                  Column(
-                    children: [
-                      Row(
-                        children: const [
-                          Text(
-                            'Essa é uma tela de imagens',
-                            style: TextStyle(
-                              fontFamily: 'Italian',
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: const [
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 200, vertical: 15),
+                    child: Text(
+                      'Olá usuário!',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Italian'),
+                    ),
                   ),
-                  Column(),
+                  Text(
+                    'Você está na segunda tela do nosso app, voltar aperte o arrow left na appBar',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Italian',
+                    ),
+                  ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 350),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                 color: Colors.black, 
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(CupertinoIcons.back, color: Colors.white),
+                    Icon(CupertinoIcons.circle_filled, color: Colors.white), 
+                    Icon(CupertinoIcons.forward, color: Colors.white),
+                  ],
+                ),
               ),
             ),
           ],
@@ -110,4 +99,6 @@ class NextPage extends StatelessWidget {
     );
   }
 }
+
+class CachedNetworkImage {}
 //stl e tab cria a estrutura inicial de um stateless Widget
